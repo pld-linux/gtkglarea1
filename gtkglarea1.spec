@@ -18,6 +18,9 @@ BuildRequires:	gtk+-devel => 1.2.0
 Requires:	OpenGL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libgtkglarea5
+Obsoletes:	gtkglarea < 1.99
+# not added yet because of rpm and poldek problems
+#Provides:	gtkglarea = %{version}
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 %define		_datadir	/usr/share
@@ -60,7 +63,9 @@ Group:		X11/Libraries
 Requires:	%{name} = %{version}
 Requires:	OpenGL-devel
 Requires:	gtk+-devel => 1.2.0
+Obsoletes:	gtkglarea-devel < 1.99
 Obsoletes:	libgtkglarea5-devel
+#Provides:	gtkglarea-devel = %{version}
 
 %description devel
 Header files for development using the GtkGLArea widget.
@@ -88,6 +93,8 @@ Summary(pl):	Statyczne biblioteki GtkGLArea
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
 Group:		X11/Libraries
 Requires:	%{name}-devel = %{version}
+Obsoletes:	gtkglarea-static < 1.99
+#Provides:	gtkglarea-static = %{version}
 
 %description static
 GtkGLArea (OpenGL for GTK+) static libraries.
@@ -100,7 +107,7 @@ Bibliotecas estáticas para desenvolvimento de aplicações que usem a
 biblioteca GtkGLArea.
 
 %prep
-%setup -q
+%setup -q -n gtkglarea-%{version}
 %patch0
 
 %build
