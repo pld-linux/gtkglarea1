@@ -11,6 +11,7 @@ Release:	7
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://gliv.tuxfamily.org/%{tar_name}-%{version}.tar.gz
+# Source0-md5:	31061342e2da718dad549b01e795bb7a
 Patch0:		%{name}-m4_fix.patch
 URL:		http://www.student.oulu.fi/~jlof/gtkglarea/
 BuildRequires:	OpenGL-devel
