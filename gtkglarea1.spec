@@ -7,7 +7,7 @@ Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea1
 %define		tar_name	gtkglarea
 Version:	1.2.3
-Release:	7
+Release:	8
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://gliv.tuxfamily.org/%{tar_name}-%{version}.tar.gz
@@ -61,7 +61,7 @@ Summary(pt_BR):	Arquivos de inclusão para desenvolvimento de aplicações que usem
 Summary(ru):	GtkGLArea - ÆÁÊÌÙ ÄÌÑ ÒÁÚÒÁÂÏÔËÉ ÐÒÏÇÒÁÍÍ
 Summary(uk):	GtkGLArea - ÆÁÊÌÉ ÄÌÑ ÒÏÚÒÏÂËÉ ÐÒÏÇÒÁÍ
 Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
-Group:		X11/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	OpenGL-devel
 Requires:	gtk+-devel => 1.2.0
@@ -93,7 +93,7 @@ gn a mezåjhe po fé des porogrames avou les foncsions di GtkGLArea.
 Summary:	GtkGLArea static libraries
 Summary(pl):	Statyczne biblioteki GtkGLArea
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
-Group:		X11/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}
 Obsoletes:	gtkglarea-static < 1.99
 #Provides:	gtkglarea-static = %{version}
@@ -110,7 +110,7 @@ biblioteca GtkGLArea.
 
 %prep
 %setup -q -n gtkglarea-%{version}
-%patch0
+%patch0 -p1
 
 %build
 cp /usr/share/automake/config.sub .
