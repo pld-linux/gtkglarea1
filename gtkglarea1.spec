@@ -10,8 +10,9 @@ Version:	1.2.3
 Release:	7
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://www.student.oulu.fi/~jlof/gtkglarea/download/%{tar_name}-%{version}.tar.gz
+Source0:	http://gliv.tuxfamily.org/%{tar_name}-%{version}.tar.gz
 Patch0:		%{name}-m4_fix.patch
+URL:		http://www.student.oulu.fi/~jlof/gtkglarea/
 BuildRequires:	OpenGL-devel
 BuildRequires:	gtk+-devel => 1.2.0
 Requires:	OpenGL
