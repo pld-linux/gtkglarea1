@@ -15,6 +15,7 @@ Source0:	http://gliv.tuxfamily.org/%{tar_name}-%{version}.tar.gz
 Patch0:		%{name}-m4_fix.patch
 URL:		http://www.student.oulu.fi/~jlof/gtkglarea/
 BuildRequires:	OpenGL-devel
+BuildRequires:	automake
 BuildRequires:	gtk+-devel => 1.2.0
 Requires:	OpenGL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -56,7 +57,7 @@ gdkgl, яка по сут╕ ╓ обгорткою навкруг функц╕й GLX. Сам в╕джет дуже
 %package devel
 Summary:	GtkGLArea OpenGL widget for GTK+ - development libs and headers
 Summary(pl):	Pliki nagЁСwkowe GtkGLArea
-Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para desenvolvimento de aplicaГУes que usem a biblioteca GtkGLArea
+Summary(pt_BR):	Arquivos de inclusЦo para desenvolvimento de aplicaГУes que usem a biblioteca GtkGLArea
 Summary(ru):	GtkGLArea - файлы для разработки программ
 Summary(uk):	GtkGLArea - файли для розробки програм
 Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchНs *.h Хt statikХs lНvreyes
@@ -136,9 +137,9 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog docs/HOWTO.txt docs/gdkgl.txt docs/gtkglarea.txt
-%{_includedir}/gtkgl
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
+%{_includedir}/gtkgl
 %{_aclocaldir}/*
 
 %files static
