@@ -113,6 +113,7 @@ biblioteca GtkGLArea.
 %patch0
 
 %build
+cp /usr/share/automake/config.sub .
 %configure
 %{__make}
 
