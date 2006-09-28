@@ -1,3 +1,4 @@
+%define		tar_name	gtkglarea
 Summary:	GtkGLArea OpenGL widget for GTK+
 Summary(pl):	GtkGLArea - kontrolka GTK+ do prezentacji obiektów OpenGL
 Summary(pt_BR):	Um widget OpenGL para a biblioteca GUI GTK+
@@ -5,7 +6,6 @@ Summary(ru):	GtkGLArea - ÜÔÏ OpenGL ×ÉÄÖÅÔ ÄÌÑ GTK+
 Summary(uk):	GtkGLArea - ÃÅ OpenGL ×¦ÄÖÅÔ ÄÌÑ GTK+
 Summary(wa):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea1
-%define		tar_name	gtkglarea
 Version:	1.2.3
 Release:	8
 License:	LGPL
@@ -18,9 +18,9 @@ BuildRequires:	OpenGL-devel
 BuildRequires:	automake
 BuildRequires:	gtk+-devel => 1.2.0
 Requires:	OpenGL
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	libgtkglarea5
 Obsoletes:	gtkglarea < 1.99
+Obsoletes:	libgtkglarea5
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 # not added yet because of rpm and poldek problems
 #Provides:	gtkglarea = %{version}
 
@@ -62,12 +62,12 @@ Summary(ru):	GtkGLArea - ÆÁÊÌÙ ÄÌÑ ÒÁÚÒÁÂÏÔËÉ ÐÒÏÇÒÁÍÍ
 Summary(uk):	GtkGLArea - ÆÁÊÌÉ ÄÌÑ ÒÏÚÒÏÂËÉ ÐÒÏÇÒÁÍ
 Summary(wa):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	OpenGL-devel
 Requires:	gtk+-devel => 1.2.0
+#Provides:	gtkglarea-devel = %{version}
 Obsoletes:	gtkglarea-devel < 1.99
 Obsoletes:	libgtkglarea5-devel
-#Provides:	gtkglarea-devel = %{version}
 
 %description devel
 Header files for development using the GtkGLArea widget.
@@ -94,9 +94,9 @@ Summary:	GtkGLArea static libraries
 Summary(pl):	Statyczne biblioteki GtkGLArea
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
-Obsoletes:	gtkglarea-static < 1.99
+Requires:	%{name}-devel = %{version}-%{release}
 #Provides:	gtkglarea-static = %{version}
+Obsoletes:	gtkglarea-static < 1.99
 
 %description static
 GtkGLArea (OpenGL for GTK+) static libraries.
