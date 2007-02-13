@@ -1,10 +1,10 @@
 %define		tar_name	gtkglarea
 Summary:	GtkGLArea OpenGL widget for GTK+
-Summary(pl.UTF-8):   GtkGLArea - kontrolka GTK+ do prezentacji obiektów OpenGL
-Summary(pt_BR.UTF-8):   Um widget OpenGL para a biblioteca GUI GTK+
-Summary(ru.UTF-8):   GtkGLArea - это OpenGL виджет для GTK+
-Summary(uk.UTF-8):   GtkGLArea - це OpenGL віджет для GTK+
-Summary(wa.UTF-8):   GtkGLArea est on ahesse pol toolkit grafike GTK+
+Summary(pl.UTF-8):	GtkGLArea - kontrolka GTK+ do prezentacji obiektów OpenGL
+Summary(pt_BR.UTF-8):	Um widget OpenGL para a biblioteca GUI GTK+
+Summary(ru.UTF-8):	GtkGLArea - это OpenGL виджет для GTK+
+Summary(uk.UTF-8):	GtkGLArea - це OpenGL віджет для GTK+
+Summary(wa.UTF-8):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea1
 Version:	1.2.3
 Release:	8
@@ -56,11 +56,11 @@ gdkgl, яка по суті є обгорткою навкруг функцій 
 
 %package devel
 Summary:	GtkGLArea OpenGL widget for GTK+ - development libs and headers
-Summary(pl.UTF-8):   Pliki nagłówkowe GtkGLArea
-Summary(pt_BR.UTF-8):   Arquivos de inclusão para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
-Summary(ru.UTF-8):   GtkGLArea - файлы для разработки программ
-Summary(uk.UTF-8):   GtkGLArea - файли для розробки програм
-Summary(wa.UTF-8):   GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
+Summary(pl.UTF-8):	Pliki nagłówkowe GtkGLArea
+Summary(pt_BR.UTF-8):	Arquivos de inclusão para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
+Summary(ru.UTF-8):	GtkGLArea - файлы для разработки программ
+Summary(uk.UTF-8):	GtkGLArea - файли для розробки програм
+Summary(wa.UTF-8):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès lîvreyes
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	OpenGL-devel
@@ -91,8 +91,8 @@ gn a mezåjhe po fé des porogrames avou les foncsions di GtkGLArea.
 
 %package static
 Summary:	GtkGLArea static libraries
-Summary(pl.UTF-8):   Statyczne biblioteki GtkGLArea
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
+Summary(pl.UTF-8):	Statyczne biblioteki GtkGLArea
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 #Provides:	gtkglarea-static = %{version}
