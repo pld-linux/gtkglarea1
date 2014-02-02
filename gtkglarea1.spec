@@ -7,25 +7,22 @@ Summary(uk.UTF-8):	GtkGLArea - це OpenGL віджет для GTK+
 Summary(wa.UTF-8):	GtkGLArea est on ahesse pol toolkit grafike GTK+
 Name:		gtkglarea1
 Version:	1.2.3
-Release:	9
-License:	LGPL
+Release:	10
+License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://gliv.tuxfamily.org/%{tar_name}-%{version}.tar.gz
 # Source0-md5:	31061342e2da718dad549b01e795bb7a
 Patch0:		%{name}-m4_fix.patch
+Patch1:		%{name}-format.patch
 URL:		http://www.student.oulu.fi/~jlof/gtkglarea/
 BuildRequires:	OpenGL-devel
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	automake
-BuildRequires:	gtk+-devel => 1.2.0
+BuildRequires:	gtk+-devel >= 1.2.0
 Requires:	OpenGL
 Obsoletes:	gtkglarea < 1.99
 Obsoletes:	libgtkglarea5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-# not added yet because of rpm and poldek problems
-#Provides:	gtkglarea = %{version}
-
-%define 	_noautoreqdep	libGL.so.1 libGLU.so.1
-%define		_datadir	/usr/share
 
 %description
 Just as GTK+ is build on top of GDK, GtkGLArea is built on top of
@@ -64,8 +61,7 @@ Summary(wa.UTF-8):	GtkGLArea est on ahesse po GTK+ - fitchîs *.h èt statikès 
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	OpenGL-devel
-Requires:	gtk+-devel => 1.2.0
-#Provides:	gtkglarea-devel = %{version}
+Requires:	gtk+-devel >= 1.2.0
 Obsoletes:	gtkglarea-devel < 1.99
 Obsoletes:	libgtkglarea5-devel
 
@@ -95,7 +91,6 @@ Summary(pl.UTF-8):	Statyczne biblioteki GtkGLArea
 Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento de aplicações que usem a biblioteca GtkGLArea
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
-#Provides:	gtkglarea-static = %{version}
 Obsoletes:	gtkglarea-static < 1.99
 
 %description static
@@ -111,6 +106,7 @@ biblioteca GtkGLArea.
 %prep
 %setup -q -n gtkglarea-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp /usr/share/automake/config.sub .
@@ -133,16 +129,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libgtkgl.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgtkgl.so.5
 
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog docs/HOWTO.txt docs/gdkgl.txt docs/gtkglarea.txt
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libgtkgl.so
+%{_libdir}/libgtkgl.la
 %{_includedir}/gtkgl
-%{_aclocaldir}/*
+%{_aclocaldir}/gtkgl.m4
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libgtkgl.a
